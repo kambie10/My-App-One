@@ -1,9 +1,9 @@
 import React from 'react'
-import {View, Text, Image} from 'react-native'
+import {View, Text, Image, TouchableOpacity} from 'react-native'
 
-import macbook from '../assets/image/macbook.jpg'
+import macbook from '../../assets/image/macbook.jpg'
 
-export default function StylingReactNativeComponent() {
+export default function Product(props) {
   return (
     <View
       style={{
@@ -31,23 +31,25 @@ export default function StylingReactNativeComponent() {
       <Text style={{fontSize: 12, fontWeight: '300', marginTop: 12}}>
         Jakarta Barat
       </Text>
-      <View
-        style={{
-          backgroundColor: '#6FCF97',
-          paddingVertical: 6,
-          borderRadius: 25,
-          marginTop: 20,
-        }}>
-        <Text
+      <TouchableOpacity onPress={props.onButtonPress}>
+        <View
           style={{
-            fontSize: 14,
-            fontWeight: '600',
-            color: 'white',
-            textAlign: 'center',
+            backgroundColor: '#6FCF97',
+            paddingVertical: 6,
+            borderRadius: 25,
+            marginTop: 20,
           }}>
-          BELI
-        </Text>
-      </View>
+          <Text
+            style={{
+              fontSize: 14,
+              fontWeight: '600',
+              color: 'white',
+              textAlign: 'center',
+            }}>
+            BELI
+          </Text>
+        </View>
+      </TouchableOpacity>
     </View>
   )
 }
